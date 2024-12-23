@@ -1,6 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const blogSchema = new Schema(
   {
@@ -19,14 +18,17 @@ const blogSchema = new Schema(
     blogimage: {
       type: String, //cloudinary topic
     },
-    videoFile: {
-      type: String,
-    },
     owner: {
       type: Schema.Types.ObjectId,
       ref: "User",
       required:true,
     },
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Comment", // Reference to Comment model
+      },
+    ],
   },
   {
     timestamps: true,

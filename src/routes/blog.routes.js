@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { addPost } from "../controllers/blog.controller.js";
 const router = Router();
-import { upload } from "../middlewares/multer.middleware";
+import { upload } from "../middlewares/multer.middleware.js";
 
 
 router.route("/write").post(
@@ -12,10 +12,6 @@ router.route("/write").post(
     },
     {
       name: "blogImage",
-      maxCount: 1,
-    },
-    {
-      name: "VideoFile",
       maxCount: 1,
     },
   ]),
