@@ -20,11 +20,11 @@ app.use(cookieParser());
 //Routes import
 import userRouter from "./routes/user.routes.js";
 import blogRouter from "./routes/blog.routes.js";
+import commentRouter from "./routes/comment.routes.js"
 
-//Routes declaration 
+//Routes declaration
 //http://localhost:8000/api/v1/users/register
-app.use("/api/v1/users",userRouter)
-
-app.use("/api/v1/blogs",blogRouter)
-
+app.use("/api/v1/users", userRouter);
+app.use("/api/v1/blogs", blogRouter);
+app.use("/api/v1/comment", commentRouter);
 export { app };
